@@ -3,9 +3,11 @@ from pydantic import BaseModel
 
 router = APIRouter()
 
+
 class TaskCreateIn(BaseModel):
     text: str
     language: str = "en"
+
 
 class TaskOut(BaseModel):
     task_id: str
@@ -16,7 +18,10 @@ class TaskOut(BaseModel):
     result_url: str | None = None
     error: str | None = None
 
+
 @router.post("/", response_model=TaskOut, status_code=201)
-async def submit_task(payload: TaskCreateIn, idempotency_key: str | None = Header(default=None)):
+async def submit_task(
+    payload: TaskCreateIn, idempotency_key: str | None = Header(default=None)
+):
     # TODO: call application layer
     raise HTTPException(501, "Not implemented yet")
