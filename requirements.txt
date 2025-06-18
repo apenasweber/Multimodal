@@ -38,3 +38,8 @@ vine==5.1.0
 watchfiles==1.1.0
 wcwidth==0.2.13
 websockets==15.0.1
+black==25.1.0
+flake8==7.2.0
+isort==6.0.1
+pytest==8.4.1
+pytest-asyncio==1.0.0
